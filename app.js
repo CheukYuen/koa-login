@@ -5,7 +5,7 @@ const app = new Koa();
 
 function render(page) {
   return new Promise((res, res) => {
-    
+
   })
 }
 
