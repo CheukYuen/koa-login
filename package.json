@@ -2,9 +2,11 @@
   "name": "koa-login",
   "version": "0.0.1",
   "dependencies": {
-    "koa": "^2.3.0"
+    "ejs": "^2.5.6",
+    "koa": "^2.3.0",
+    "koa-mysql-session": "0.0.2",
+    "koa-session-minimal": "^3.0.4",
+    "koa-views": "^6.0.2"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }
