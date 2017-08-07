@@ -11,8 +11,8 @@ const user = {
     let _sql = `
     SELECT * from user_info
       where email="${options.email}" or name="${options.name}"
-      limit 1`
-    let result = await dbUtils.query(_sql)
+      limit 1`;
+    let result = await dbUtils.query(_sql);
     if (Array.isArray(result) && result.length > 0) {
       result = result[0]
     } else {
@@ -25,8 +25,8 @@ const user = {
     let _sql = `
     SELECT * from user_info
       where password="${options.password}" and name="${options.name}"
-      limit 1`
-    let result = await dbUtils.query(_sql)
+      limit 1`;
+    let result = await dbUtils.query(_sql);
     if (Array.isArray(result) && result.length > 0) {
       result = result[0]
     } else {
