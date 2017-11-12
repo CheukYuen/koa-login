@@ -3,25 +3,24 @@
   "version": "0.0.1",
   "dependencies": {
     "busboy": "^0.2.14",
-    "chai": "^4.1.0",
-    "ejs": "^2.5.6",
+    "chai": "^4.1.2",
+    "ejs": "^2.5.7",
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
-    "koa-logger": "^3.0.1",
+    "koa-logger": "^3.1.0",
     "koa-mysql-session": "0.0.2",
     "koa-router": "^7.2.1",
     "koa-session-minimal": "^3.0.4",
-    "koa-views": "^6.0.2",
-    "mocha": "^3.4.2",
-    "mysql": "^2.13.0",
+    "koa-views": "^6.1.1",
+    "mysql": "^2.15.0",
     "supertest": "^3.0.0",
     "time": "^0.12.0",
-    "validator": "^8.0.0"
+    "validator": "^8.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-preset-es2015": "^6.24.1",
-    "mocha": "^3.4.2",
+    "mocha": "^3.5.3",
     "should": "^11.2.1"
   }
 }

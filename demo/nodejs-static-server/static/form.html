@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<button onclick="sendData({Name:'Leon Lin'})">Click Me!</button>
+<script>
+  function sendData(data) {
+    var XHR = new XMLHttpRequest();
+    var urlEncodedData = "";
+
+    // 将对象类型的数据转换成URL字符串
+    for(name in data) {
+      urlEncodedData += name + "=" + data[name] + "&";
+    }
+
+    // 删除掉最后的"&"字符
+    urlEncodedData = urlEncodedData.slice(0, -1);
+
+    // 将URL字符串进行百分号编码(UTF-8)
+    urlEncodedData = encodeURIComponent(urlEncodedData);
+
+    // encodeURIComponent函数多编码了一些字符,我们需要还原.
+    urlEncodedData = urlEncodedData.replace('%20','+').replace('%3D','=');
+
+    // 定义数据成功发送并返回后执行的操作
+    XHR.addEventListener('load', function(event) {
+      alert('Yeah! Data sent and response loaded.');
+    });
+
+    // 定义发生错误时执行的操作
+    XHR.addEventListener('error', function(event) {
+      alert('Oups! Something goes wrong.');
+    });
+
+    // 设置请求地址和方法
+    XHR.open('POST', 'http://localhost:3000/post-form-data');
+
+    // 根据HTTP协议,我们要添加一些POST请求提交表单时需要的请求头
+    XHR.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    console.log(urlEncodedData);
+//    XHR.setRequestHeader('Content-Length', urlEncodedData.length);
+
+    // 最后,发送我们的数据.
+    XHR.send(urlEncodedData);
+  }
+</script>
+</body>
+</html>
